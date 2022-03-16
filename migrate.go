@@ -47,7 +47,7 @@ func main() {
 		if issue.Fields.Description != "" {
 			issue.Fields.Description = translateDescription(issue.Fields.Description)
 		}
-		import_message := "\n*Imported* from Jira Certi: https://certi-cdm.atlassian.net/browse/" + issue.Key
+		import_message := "\n*Imported* from Jira Certi: https://xxxxxxxx.atlassian.net/browse/" + issue.Key
 		issue.Fields.Description = issue.Fields.Description + import_message
 		printIssue(issue)
 		// create Issue on DST
@@ -142,7 +142,7 @@ func createFromIssue(client *jira.Client, issueFrom *jira.Issue) {
 	unknowns := tcontainer.NewMarshalMap()
 	unknowns["customfield_10002"] = issueFrom.Fields.Unknowns["customfield_10002"]
 
-	// Labels: original labels plus compent name
+	// Labels: original labels plus component name
 	labels := issueFrom.Fields.Labels
 	labels = append(labels, issueFrom.Key) // add orign key
 	for _, c := range issueFrom.Fields.Components {
