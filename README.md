@@ -2,6 +2,7 @@
 
 **A golang tool to migrate Jira issues from one server to another.**
 
+![Gopher](./gopher.png)
 
 ## How it works
 
